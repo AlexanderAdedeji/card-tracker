@@ -6,9 +6,9 @@ const AppLayout = () => {
   const outlet = useOutlet();
 
   return (
-    <div className='w-full h-full relative'>
+    <div className='w-full h-full relative min-h-screen bg-white dark:bg-green-2'>
       <Nav />
-      <main>{outlet}</main>
+      <main className='w-full h-full min-h-screen'>{outlet}</main>
     </div>
   );
 };

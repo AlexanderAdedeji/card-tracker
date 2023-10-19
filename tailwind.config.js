@@ -41,7 +41,8 @@ module.exports = {
           2: '#001509'
         },
         green: {
-          1: '#011C0B'
+          1: '#011C0B',
+          2: '#000603'
         },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
