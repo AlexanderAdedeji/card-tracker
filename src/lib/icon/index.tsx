@@ -1,15 +1,18 @@
-export type iconTypes = '';
+import Logo from '@/assets/svg/lassraLogo.svg?react';
+
+export type iconTypes = 'logo';
 
 interface IconInterface {
   name: iconTypes;
   svgProp?: React.SVGProps<SVGSVGElement>;
 }
 
-//TODO: can I abstract the icons const out of render
 const Icon = ({ name, svgProp }: IconInterface) => {
   const icons: Record<iconTypes, JSX.Element> = {
-    '': <></>,
+    logo: <Logo {...svgProp} />,
   };
 
   return icons[name];
 };
+
+export default Icon;

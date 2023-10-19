@@ -1,7 +1,9 @@
 /** @type {import('tailwindcss').Config} */
+const {nextui} = require("@nextui-org/react");
+
 module.exports = {
   darkMode: 'class',
-  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
+  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}', "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}"],
   theme: {
     screens: {
       xs: '475px',
@@ -12,17 +14,19 @@ module.exports = {
       xl: '1280px',
     },
     fontFamily: {
+      'domine': ['Domine', 'serif'],
+      'poppins': ['Poppins', 'sans-serif']
     },
     container: {
       center: true,
       screens: {
-        xl: '1440px',
+        xl: '1340px',
       }
     },
     extend: {
       padding: {
-        'container-lg': '2.44rem',
-        'container-base': '1.3rem',
+        'container-lg': '3.12rem',
+        'container-base': '1.38rem',
       },
       margin: {
         'container-lg': '2.44rem',
@@ -32,7 +36,13 @@ module.exports = {
         transparent: 'transparent',
         current: 'currentColor',
         white: '#ffffff',
-       
+        black: {
+          1: '#001B0B',
+          2: '#001509'
+        },
+        green: {
+          1: '#011C0B'
+        },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -78,7 +88,9 @@ module.exports = {
         3: '0px 4px 8px 0px rgba(57, 83, 123, 0.08)'
       },
       backgroundImage: {
-        hero: `linear-gradient(360deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 100%), linear-gradient(180deg, rgba(0, 0, 0, 0.7) 0%, rgba(0, 0, 0, 0) 34.38%)`,
+        nav: `linear-gradient(180deg, #B2DFC4 0%, #FFFDB3 100%)`,
+        btnFull: `linear-gradient(85deg, #011C0B 3.72%, #00933C 91.94%)`,
+
       },
       transitionProperty: {
         font: 'font-size, transform',
@@ -109,5 +121,5 @@ module.exports = {
       },
     },
   },
-  plugins: [require('@tailwindcss/forms'), require("tailwindcss-animate")],
+  plugins: [require('@tailwindcss/forms'), require("tailwindcss-animate"), nextui()],
 };
