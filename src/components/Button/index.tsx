@@ -5,7 +5,7 @@ import { cn } from '@nextui-org/react';
 const buttonVariants = cva('rounded-[1.25rem] px-[2rem] font-domine ', {
   variants: {
     variant: {
-      default: 'text-white bg-btnFull',
+      default: 'text-white bg-btnFull ',
       naked:
         'text-black-1/90 border border-green-1 hover:bg-btnFull transition-colors ease-in-out duration-300',
     },
@@ -14,10 +14,15 @@ const buttonVariants = cva('rounded-[1.25rem] px-[2rem] font-domine ', {
       sm: 'h-[2.23rem]',
       lg: 'h-[3.18rem]',
     },
+    themed: {
+      default: '',
+      theme1: 'dark:bg-btnGreen',
+    },
   },
   defaultVariants: {
     size: 'default',
     variant: 'default',
+    themed: 'default',
   },
 });
 
@@ -28,9 +33,13 @@ interface IButton
 }
 
 const Button = forwardRef<HTMLButtonElement, IButton>(
-  ({ label, className, variant, size, ...props }, ref) => {
+  ({ label, className, variant, size, themed, ...props }, ref) => {
     return (
-      <button className={cn(buttonVariants({ variant, size, className }))} ref={ref} {...props}>
+      <button
+        className={cn(buttonVariants({ variant, size, themed, className }))}
+        ref={ref}
+        {...props}
+      >
         {label}
       </button>
     );

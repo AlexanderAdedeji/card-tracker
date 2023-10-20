@@ -20,7 +20,7 @@ module.exports = {
     container: {
       center: true,
       screens: {
-        xl: '1340px',
+        xl: '1440px',
       }
     },
     extend: {
@@ -42,7 +42,14 @@ module.exports = {
         },
         green: {
           1: '#011C0B',
-          2: '#000603'
+          2: '#000603',
+          3: '#B2DFC4',
+          4: '#E5F4EB',
+          5: '#CCE9D8',
+          6: '#3FD77D'
+        },
+        grey: {
+          1: '#111111'
         },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -91,6 +98,10 @@ module.exports = {
       backgroundImage: {
         nav: `linear-gradient(180deg, #B2DFC4 0%, #FFFDB3 100%)`,
         btnFull: `linear-gradient(85deg, #011C0B 3.72%, #00933C 91.94%)`,
+        "text-1": `linear-gradient(85deg, #DBD86B 3.72%, #38DF7C 91.94%)`,
+        btnGreen: `linear-gradient(263deg, #33A943 -24.08%, #33A963 100%)`,
+        btnGreenDeep: `linear-gradient(263deg, #000F06 -24.08%, #001D0C 100%)`,
+
 
       },
       transitionProperty: {

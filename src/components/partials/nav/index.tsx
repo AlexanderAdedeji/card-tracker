@@ -1,15 +1,18 @@
 import Button from '@/components/Button';
 import Icon from '@/lib/icon';
-import React from 'react';
 import ThemeToggler from '../ThemeToggler';
+import { routeTypeEnums } from '@/routes/routes.types';
+import { useNavigate } from 'react-router-dom';
 
 const Nav = () => {
+  const navigate = useNavigate();
+
   return (
-    <div className='w-full lg:container lg:pt-[2.87rem] fixed top-0 right-0 left-0 z-10'>
+    <div className='w-full lg:container lg:pt-[2.87rem] fixed top-0 right-0 left-0 z-10 lg:px-container-lg'>
       <div className='sticky top-0 right-0 left-0 flex justify-between items-center py-[0.5rem] px-container-base lg:px-container-lg lg:rounded-[1.875rem] bg-nav'>
         <div className='flex items-center gap-[1.8rem] '>
           <Icon name='logo' />
-          <span className='hidden md:flex max-w-[5.12rem] text-black-1 text-[0.69688rem] font-[500] tracking-[0.05575rem]'>
+          <span className='hidden md:flex max-w-[6.125rem] text-black-1 text-[0.69688rem] font-[500] tracking-[0.05575rem]'>
             LAGOS STATE RELOCATION RUNNINGS
           </span>
         </div>
@@ -22,6 +25,7 @@ const Nav = () => {
             size={'sm'}
             label='Get started'
             className='hidden md:inline-block'
+            onClick={() => navigate(`/${routeTypeEnums.Enum.onboarding}`)}
           />
           <ThemeToggler />
         </div>
