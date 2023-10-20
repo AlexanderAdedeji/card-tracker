@@ -1,5 +1,4 @@
 import Nav from '@/components/partials/nav';
-import React from 'react';
 import { useOutlet } from 'react-router-dom';
 
 const AppLayout = () => {

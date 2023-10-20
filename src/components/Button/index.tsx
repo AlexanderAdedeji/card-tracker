@@ -7,7 +7,7 @@ const buttonVariants = cva('rounded-[1.25rem] px-[2rem] font-domine ', {
     variant: {
       default: 'text-white bg-btnFull ',
       naked:
-        'text-black-1/90 border border-green-1 hover:bg-btnFull transition-colors ease-in-out duration-300',
+        'text-black-1/90 dark:text-green-3  border border-green-1 dark:border-green-15  hover:bg-btnFull transition-colors ease-in-out duration-300',
     },
     size: {
       default: 'h-[2.8rem]',

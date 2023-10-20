@@ -1,4 +1,3 @@
-import { useState } from 'react';
 import { Toaster } from 'react-hot-toast';
 import { Routes, Route, Navigate, useNavigate } from 'react-router-dom';
 import NotFound from './components/general/NotFound';

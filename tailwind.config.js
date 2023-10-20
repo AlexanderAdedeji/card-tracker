@@ -38,7 +38,11 @@ module.exports = {
         white: '#ffffff',
         black: {
           1: '#001B0B',
-          2: '#001509'
+          2: '#001509',
+          3: '#001508',
+          4: '#000F06',
+          5: '#1E1E1E',
+          6: '#001C0B'
         },
         green: {
           1: '#011C0B',
@@ -46,10 +50,31 @@ module.exports = {
           3: '#B2DFC4',
           4: '#E5F4EB',
           5: '#CCE9D8',
-          6: '#3FD77D'
+          6: '#3FD77D',
+          7: '#00933C',
+          8: '#80C99D',
+          9: '#33A963',
+          10: '#FCFEFD',
+          11: '#4CB377',
+          12: '#080D0B',
+          13: '#C5DAE7',
+          14: '#E4F3EA',
+          15: '#33A955'
         },
         grey: {
-          1: '#111111'
+          1: '#111111',
+          2: '#F2FAF5',
+          3: '#91A2AD'
+        },
+        blue: {
+          1: '#9FC2D7',
+          2: '#264F69'
+        },
+        yellow: {
+          1: '#FFFB81',
+        },
+        brown: {
+          1: '#AC4243'
         },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -93,7 +118,8 @@ module.exports = {
       boxShadow: {
         1: '15px 5px 5px 0px rgba(0, 0, 0, 0.075)',
         2: '0px 2px 4px 0px rgba(35, 57, 91, 0.20)',
-        3: '0px 4px 8px 0px rgba(57, 83, 123, 0.08)'
+        3: '0px 4px 8px 0px rgba(57, 83, 123, 0.08)',
+        4: '0px 2px 4px 1px rgba(0, 0, 0, 0.05)'
       },
       backgroundImage: {
         nav: `linear-gradient(180deg, #B2DFC4 0%, #FFFDB3 100%)`,
