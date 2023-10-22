@@ -1,6 +1,6 @@
-import CommonGreenBtn from 'components/general/Btns/CommonGreenBtn';
+// import CommonGreenBtn from 'components/general/Btns/CommonGreenBtn';
 import ReactLoading from 'react-loading';
-import Icon from 'utils/Icon';
+// import Icon from 'utils/Icon';
 
 interface IWithLoadingState {
   isLoading: boolean;
@@ -24,13 +24,13 @@ const WithLoadingState = ({
     </div>
   ) : isErrored ? (
     <div className='w-full h-full flex-grow flex flex-col items-center justify-center pt-[2.5rem] gap-4'>
-      <Icon name='exclamation' svgProp={{ className: 'text-green-1/70 w-[7rem] h-[7rem]' }} />
+      {/* <Icon name='exclamation' svgProp={{ className: 'text-green-1/70 w-[7rem] h-[7rem]' }} /> */}
       <span className='text-[18px] font-[500] text-blue-1/[0.87]'>An Error Occured</span>
-      <CommonGreenBtn
+      {/* <CommonGreenBtn
         label='Refresh'
         className={`max-w-[15rem] ${!refreshAction ? `hidden` : ``}`}
         onClick={() => refreshAction?.()}
-      />
+      /> */}
     </div>
   ) : (
     <>{children}</>
