@@ -41,13 +41,13 @@ const CardQuery = () => {
             Stay informed about your application updates
           </p>
         </div>
-        <div className='w-full max-w-[44.2rem] mx-auto mb-[2.24rem] md:mb-[6.94rem]'>
+        {/* <div className='w-full max-w-[44.2rem] mx-auto mb-[2.24rem] md:mb-[6.94rem]'>
           <SearchInput
             onButtonClick={() => {}}
             defaultValue={searchValue}
             onChange={(e) => setSearchValue(e.currentTarget.value)}
           />
-        </div>
+        </div> */}
         <div className='w-full flex flex-col border border-green-13/80 dark:border-green-13/30 mb-[4.4rem]'>
           <div className='bg-green-14 dark:bg-green-14/[0.15] px-container-base lg:px-container-lg py-[1.5rem] text-[0.875rem] md:text-[1.375rem] text-black-5 dark:text-green-3 font-[500] leading-[0.75rem] md:leading-[1.25rem]'>
             Card Information
