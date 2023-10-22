@@ -2,10 +2,12 @@ import Button from '@/components/Button';
 import Icon from '@/lib/icon';
 import ThemeToggler from '../ThemeToggler';
 import { routeTypeEnums } from '@/routes/routes.types';
-import { useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { cn } from '@nextui-org/react';
 
 const Nav = () => {
   const navigate = useNavigate();
+  const location = useLocation();
 
   return (
     <div className='w-full lg:container lg:pt-[2.87rem] fixed top-0 right-0 left-0 z-10 lg:px-container-lg'>
@@ -24,7 +26,7 @@ const Nav = () => {
             variant={'default'}
             size={'sm'}
             label='Get started'
-            className='hidden md:inline-block'
+            className={cn('hidden md:inline-block', location?.pathname === '/' ? '' : '!hidden')}
             onClick={() => navigate(`/${routeTypeEnums.Enum.onboarding}`)}
           />
           <ThemeToggler />

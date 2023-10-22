@@ -7,6 +7,7 @@ import CCS from '@/assets/svg/checkCardStatus.svg?react';
 import DMC from '@/assets/svg/deliverMyCard.svg?react';
 import RMC from '@/assets/svg/relocateMyCard.svg?react';
 import ArrowBack from '@/assets/svg/arrowBack.svg?react';
+import PeopleShaking from '@/assets/svg/peoplehandShaking.svg?react';
 
 export type iconTypes =
   | 'logo'
@@ -16,7 +17,8 @@ export type iconTypes =
   | 'checkCardStatus'
   | 'deliverMyCard'
   | 'relocateMyCard'
-  | 'arrowBack';
+  | 'arrowBack'
+  | 'peopleShakingSvg';
 
 interface IconInterface {
   name: iconTypes;
@@ -32,6 +34,7 @@ const icons: Record<iconTypes, JSX.Element> = {
   deliverMyCard: <DMC />,
   relocateMyCard: <RMC />,
   arrowBack: <ArrowBack />,
+  peopleShakingSvg: <PeopleShaking />,
 };
 
 const Icon = ({ name, svgProp }: IconInterface) => {
