@@ -100,19 +100,27 @@ const CardQuery = () => {
               ))}
               <div
                 className={cn(
-                  'w-full  py-[2rem] px-container-base lg:px-container-lg text-black-6 dark:text-green-3',
+                  'w-full grid grid-cols-2   py-[2rem] px-container-base lg:px-container-lg text-black-6 dark:text-green-3',
                   data?.requires_recapture ? `` : `hidden`,
                 )}
               >
-                Your registration requires recapture
+                <p className='text-[0.75rem] md:text-[1rem]'>Requires Validation</p>
+                <p className='text-[0.75rem] md:text-[1rem]'>
+                  {' '}
+                  Your registration requires Validation
+                </p>
               </div>
               <div
                 className={cn(
-                  'w-full  py-[2rem] px-container-base lg:px-container-lg text-black-6 dark:text-green-3',
+                  'w-full grid grid-cols-2  py-[2rem] px-container-base lg:px-container-lg text-black-6 dark:text-green-3',
                   data?.requires_validation ? `` : `hidden`,
                 )}
               >
-                Your registration requires validation
+                                <p className='text-[0.75rem] md:text-[1rem]'>Requires Recapture</p>
+                <p className='text-[0.75rem] md:text-[1rem]'>
+                  {' '}
+                  Your registration requires recapture
+                </p>
               </div>
             </div>
           </div>
