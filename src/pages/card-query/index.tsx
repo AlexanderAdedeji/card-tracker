@@ -101,7 +101,7 @@ const CardQuery = () => {
               <div
                 className={cn(
                   'w-full grid grid-cols-2   py-[2rem] px-container-base lg:px-container-lg text-black-6 dark:text-green-3',
-                  data?.requires_recapture ? `` : `hidden`,
+                  data?.requires_recapture ? `` : `hidden`,         `border-b border-b-green-13/80 dark:border-b-green-13/30`,
                 )}
               >
                 <p className='text-[0.75rem] md:text-[1rem]'>Requires Validation</p>
