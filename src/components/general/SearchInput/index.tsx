@@ -14,7 +14,7 @@ const SearchInput = forwardRef<HTMLInputElement, ISearchInput>(
       <div className={cn('relative w-full flex flex-col max-w-[55.5rem]', wrapperClassName)}>
         <label
           htmlFor={props?.id}
-          className='ml-4 mb-2 font-domine font-bold text-black-2 dark:text-green-5'
+          className=' text-center ml-4 mb-2 font-domine font-bold text-black-2 dark:text-green-5'
         >
           {label}
         </label>

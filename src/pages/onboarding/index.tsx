@@ -49,9 +49,9 @@ const Onboarding = () => {
           )}
         </ModalContent>
       </Modal>
-      <div className='container w-full h-full pt-[8.06rem] md:pt-[10.5rem] flex flex-col items-center'>
-        <h1 className='mx-auto max-w-[51.5625rem] text-[1.625rem] md:text-[3.75rem] font-domine font-[700] leading-[2.12119rem] md:leading-[4.375rem] text-center text-black-2 dark:text-green-5 mb-8 px-container-base'>
-          Seamless Lassra card access for Lagos residents
+      <div className='container w-full h-full pt-[3.06rem] md:pt-[6.5rem] flex flex-col items-center'>
+        <h1 className='mx-auto max-w-[51.5625rem] text-[1.625rem] md:text-[3.75rem] font-domine font-[700] leading-[2.12119rem] md:leading-[4.375rem] text-center text-black-2 dark:text-green-5 mb-5 px-container-base'>
+          Seamless LASRRA card access for Lagos residents
         </h1>
         <div className='w-full flex items-start flex-col lg:flex-row md:justify-between lg:max-h-[25rem] md:gap-8 mb-[2.94rem] lg:mb-4'>
           <div className='relative flex-grow-0 flex-shrink-1 basis-auto xl:min-w-[50%]'>
@@ -65,10 +65,7 @@ const Onboarding = () => {
           </div>
           <div className='relative h-full flex-grow flex justify-start md:pt-14 px-container-base lg:px-0 lg:pr-container-lg'>
             <p className=' w-full lg:max-w-[28.75rem] font-[400] md:font-[500] leading-[2.0625rem] ext-balck-1 dark:text-green-5'>
-              Your Lassra card is more than just a piece of plastic - its your getaway to government
-              services, healthcare, education and more. Our userfriendly digital platform brings a
-              new era of convienience and accesibility to the palm of your hand.
-            </p>
+            Your Lassra card is more than just a piece of plastic - it's your gateway to government services, healthcare, education and more. Our user-friendly digital platform brings a new era of convenience and accessibility to you in the palm of your hand.            </p>
           </div>
         </div>
         <div className='flex px-container-base w-full justify-center relative'>
