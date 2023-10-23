@@ -7,7 +7,7 @@
     ],
     "headers": [
       {
-        "source": "/(.*)",
+        "source": "https://card-tracker-tsfs.onrender.com",
         "headers": [
           { "key": "Access-Control-Allow-Credentials", "value": "true" },
           { "key": "Access-Control-Allow-Origin", "value": "*" },
