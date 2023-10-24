@@ -49,7 +49,7 @@ const Onboarding = () => {
           )}
         </ModalContent>
       </Modal>
-      <div className='container w-full h-full pt-[3.06rem] md:pt-[6.5rem] flex flex-col items-center'>
+      <div className='container w-full h-full pt-[3.06rem] md:pt-[1.5rem] flex flex-col items-center'>
         <h1 className='mx-auto max-w-[51.5625rem] text-[1.625rem] md:text-[3.75rem] font-domine font-[700] leading-[2.12119rem] md:leading-[4.375rem] text-center text-black-2 dark:text-green-5 mb-5 px-container-base'>
           Seamless LASRRA card access for Lagos residents
         </h1>
@@ -65,7 +65,7 @@ const Onboarding = () => {
           </div>
           <div className='relative h-full flex-grow flex justify-start md:pt-14 px-container-base lg:px-0 lg:pr-container-lg'>
             <p className=' w-full lg:max-w-[28.75rem] font-[400] md:font-[500] leading-[2.0625rem] ext-balck-1 dark:text-green-5'>
-            Your Lassra card is more than just a piece of plastic - it's your gateway to government services, healthcare, education and more. Our user-friendly digital platform brings a new era of convenience and accessibility to you in the palm of your hand.            </p>
+            Your LASRRA card is more than just a piece of plastic - it's your gateway to government services, healthcare, education and more. Our user-friendly digital platform brings a new era of convenience and accessibility to you in the palm of your hand.            </p>
           </div>
         </div>
         <div className='flex px-container-base w-full justify-center relative'>
@@ -74,7 +74,7 @@ const Onboarding = () => {
             onButtonClick={() => {
               handleSearch(searchValue);
             }}
-            label='Enter your lassra card ID'
+            label='Enter your LASRRA ID'
           />
         </div>
         <div className='container px-container-base lg:px-container-base grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-y-8 gap-x-[1.75rem] my-[6.94rem]'>

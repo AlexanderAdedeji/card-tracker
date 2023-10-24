@@ -32,7 +32,7 @@ const CardQuery = () => {
   }, [searchParams]);
 
   return (
-    <div className='container pt-[4.94rem] md:pt-[12.56rem] w-full max-w-[69.375rem] px-container-base'>
+    <div className='container pt-[2.94rem] md:pt-[1.56rem] w-full max-w-[69.375rem] px-container-base'>
       <div className='w-full flex flex-col md:border md:border-green-10 md:dark:border-green-2 md:bg-grey-2/20 md:dark:bg-green-12 rounded-[0.25rem] md:shadow-4 md:px-container-base lg:px-[7rem] py-[2rem]'>
         <div
           onClick={() => navigate(-1)}
@@ -80,11 +80,11 @@ const CardQuery = () => {
             <div className='w-full flex flex-col'>
               {(
                 [
-                  { title: 'Name:', value: `${data?.first_name} ${data?.last_name}` },
-                  { title: 'Lassra ID:', value: data?.lasrra_id },
-                  { title: 'Card Status::', value: data?.card_status },
-                  { title: 'Collection Center:', value: data?.collection_center },
-                  { title: 'Local Government:', value: data?.local_government },
+                  { title: 'Name', value: `${data?.first_name} ${data?.last_name}` },
+                  { title: 'Lassra ID', value: data?.lasrra_id },
+                  { title: 'Card Status', value: data?.card_status },
+                  { title: 'Collection Center', value: data?.collection_center },
+                  { title: 'Local Government', value: data?.local_government },
                 ] as { title: string; value: string }[]
               )?.map((i, idx) => (
                 <div
@@ -101,23 +101,23 @@ const CardQuery = () => {
               <div
                 className={cn(
                   'w-full grid grid-cols-2   py-[2rem] px-container-base lg:px-container-lg text-black-6 dark:text-green-3',
-                  data?.requires_recapture ? `` : `hidden`,         `border-b border-b-green-13/80 dark:border-b-green-13/30`,
+                  data?.requires_validation ? `` : `hidden`,         `border-b border-b-green-13/80 dark:border-b-green-13/30`,
                 )}
               >
                 <p className='text-[0.75rem] md:text-[1rem]'>Requires Validation</p>
-                <p className='text-[0.75rem] md:text-[1rem]'>
+                <p className='text-[0.75rem] md:text-[1rem] text-red-600 font-bold'>
                   {' '}
                   Your registration requires Validation
                 </p>
               </div>
               <div
                 className={cn(
-                  'w-full grid grid-cols-2  py-[2rem] px-container-base lg:px-container-lg text-black-6 dark:text-green-3',
-                  data?.requires_validation ? `` : `hidden`,
+                  'w-full grid grid-cols-2  py-[2rem] px-container-base lg:px-container-lg  dark:text-green-3',
+                  data?.requires_recapture ? `` : `hidden`,
                 )}
               >
                                 <p className='text-[0.75rem] md:text-[1rem]'>Requires Recapture</p>
-                <p className='text-[0.75rem] md:text-[1rem]'>
+                <p className='text-[0.75rem] md:text-[1rem] text-red-600 font-bold'>
                   {' '}
                   Your registration requires recapture
                 </p>
