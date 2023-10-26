@@ -15,13 +15,14 @@ const Landing = () => {
       </div>
       <div className='w-full container px-container-base md:px-0 md:pl-container-lg flex flex-col md:flex-row md:justify-between z-[1] overflow-hidden'>
         <div className=' flex flex-col items-start max-w-full md:max-w-[560px] flex-grow-0 flex-shrink-1 basis-auto pt-[11.19rem] '>
-          <h1 className='text-[2rem] md:text-[3.75rem] text-green-3 font-domine font-[700] mb-[1.62rem] md:mb-[3.25rem] leading-[2.2rem] md:leading-[4rem]'>
-          Elevate your Lagos experience with the 
+          <h1 className='text-[2rem] md:text-[3.75rem] text-green-3 font-domine font-[700] mb-[1.62rem] md:mb-[2.25rem] leading-[2.2rem] md:leading-[4rem]'>
+          Elevate your Lagos experience with the {" "}  
             <span className='bg-text-1 bg-clip-text text-transparent'>LAG ID card </span>solutions
           </h1>
-          <p className=' text-green-4 font-[500] mb-8 md:mb-[12.5rem]'>
-            Our mission is to simplify the process of obtaining and maintaining your LASRRA card, a
-            vitality identity document that connects you to a range of essential services.
+          <p className=' text-green-4 font-[500] mb-2 md:mb-[10.5rem]'>
+          The LAG ID card is a vital identity document that connects you to a wide range of services in Lagos and qualifies you for an array of benefits and opportunities.
+
+Check the status of processing and collection of your LAG ID card
           </p>
           <Button
             label='Get started'

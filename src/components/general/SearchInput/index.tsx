@@ -25,6 +25,7 @@ const SearchInput = forwardRef<HTMLInputElement, ISearchInput>(
         >
           <input
             ref={ref}
+            placeholder='Search'
             className='flex-grow bg-transparent border-none ring-0 outline-none placeholder:text-[14px] placeholder:font-domine text-black-3 '
             {...props}
           />

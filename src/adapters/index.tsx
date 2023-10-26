@@ -5,14 +5,14 @@ const baseURL = import.meta.env.VITE_USE_PROXY === 'true' ? '/api' : import.meta
 // api with auth
 const axiosInstance = axios.create({
   baseURL,
-  withCredentials: true,
+  // withCredentials: true,
 });
 
 axiosInstance.interceptors.request.use(
   (config): any => {
     return {
       ...config,
-      withCredentials: true,
+      // withCredentials: true,
       headers: {
         ...config.headers,
       },
@@ -35,7 +35,7 @@ axiosInstance.interceptors.response.use(
 // api no auth
 export const ApiNoAuth = axios.create({
   baseURL,
-  withCredentials: true,
+  // withCredentials: true,
 });
 
 ApiNoAuth.interceptors.request.use(
