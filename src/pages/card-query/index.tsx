@@ -49,7 +49,7 @@ const CardQuery = () => {
           <h3 className='font-domine text-black-1 dark:text-green-5 text-[2rem] font-[700] leading-[1.8125rem] tracking-[-0.04rem]'>
             Check card status
           </h3>
-          <p className='text-grey-3 text-[0.9375rem] font-[500] leading-[0.75rem] tracking-[-0.01875rem]'>
+          <p className='text-grey-3 text-[0.9375rem] font-[500] tracking-[-0.01875rem]'>
             Stay informed about your application updates
           </p>
         </div>
@@ -101,7 +101,8 @@ const CardQuery = () => {
               <div
                 className={cn(
                   'w-full grid grid-cols-2   py-[2rem] px-container-base lg:px-container-lg text-black-6 dark:text-green-3',
-                  data?.requires_validation ? `` : `hidden`,         `border-b border-b-green-13/80 dark:border-b-green-13/30`,
+                  data?.requires_validation ? `` : `hidden`,
+                  `border-b border-b-green-13/80 dark:border-b-green-13/30`,
                 )}
               >
                 <p className='text-[0.75rem] md:text-[1rem]'>Requires Validation</p>
@@ -116,7 +117,7 @@ const CardQuery = () => {
                   data?.requires_recapture ? `` : `hidden`,
                 )}
               >
-                                <p className='text-[0.75rem] md:text-[1rem]'>Requires Recapture</p>
+                <p className='text-[0.75rem] md:text-[1rem]'>Requires Recapture</p>
                 <p className='text-[0.75rem] md:text-[1rem] text-red-600 font-bold'>
                   {' '}
                   Your registration requires recapture

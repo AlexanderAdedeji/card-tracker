@@ -11,6 +11,7 @@ export const routeTypeEnums = z.enum([
   'onboarding',
   'card-relocation',
   'card-delivery',
+  'card-delivery',
 ]);
 
 export type routeTypes = z.infer<typeof routeTypeEnums>;

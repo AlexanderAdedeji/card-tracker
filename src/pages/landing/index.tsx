@@ -14,15 +14,15 @@ const Landing = () => {
         <Icon name='landingMask' svgProp={{ className: 'mx-auto' }} />
       </div>
       <div className='w-full container px-container-base md:px-0 md:pl-container-lg flex flex-col md:flex-row md:justify-between z-[1] overflow-hidden'>
-        <div className=' flex flex-col items-start max-w-full md:max-w-[560px] flex-grow-0 flex-shrink-1 basis-auto pt-[11.19rem] '>
+        <div className=' flex flex-col items-start max-w-full md:max-w-[560px] flex-grow-0 flex-shrink-1 basis-auto pt-[6.19rem] '>
           <h1 className='text-[2rem] md:text-[3.75rem] text-green-3 font-domine font-[700] mb-[1.62rem] md:mb-[2.25rem] leading-[2.2rem] md:leading-[4rem]'>
-          Elevate your Lagos experience with the {" "}  
+            Elevate your Lagos experience with the{' '}
             <span className='bg-text-1 bg-clip-text text-transparent'>LAG ID card </span>solutions
           </h1>
           <p className=' text-green-4 font-[500] mb-2 md:mb-[10.5rem]'>
-          The LAG ID card is a vital identity document that connects you to a wide range of services in Lagos and qualifies you for an array of benefits and opportunities.
-
-Check the status of processing and collection of your LAG ID card
+            The LAG ID card is a vital identity document that connects you to a wide range of
+            services in Lagos and qualifies you for an array of benefits and opportunities. Check
+            the status of processing and collection of your LAG ID card.
           </p>
           <Button
             label='Get started'
@@ -33,7 +33,7 @@ Check the status of processing and collection of your LAG ID card
             onClick={() => navigate(`/${routeTypeEnums.Enum.onboarding}`)}
           />
         </div>
-        <div className='relative flex mx-auto justify-center max-w-full md:max-w-[calc(100%-560px)] flex-grow-0 flex-shrink-1 basis-auto  md:pt-[5.44rem]'>
+        <div className='relative flex mx-auto justify-center max-w-full md:max-w-[calc(100%-560px)] flex-grow-0 flex-shrink-1 basis-auto  '>
           <LazyLoadImage
             wrapperClassName='md:min-w-max'
             effect='blur'

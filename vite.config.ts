@@ -12,6 +12,11 @@ export default defineConfig(({ mode }) => {
     define: {
       'process.env': process.env,
     },
+    resolve: {
+      alias: {
+        '@': '/src',
+      },
+    },
   };
   return env.VITE_USE_PROXY === 'true'
     ? {
@@ -28,18 +33,3 @@ export default defineConfig(({ mode }) => {
       }
     : mainConfig;
 });
-
-// export default defineConfig({
-
-//   server: {
-//     proxy: {
-//       '/api': {
-//         target: "https://card-tracker-tsfs.onrender.com",
-//         // changeOrigin: true,
-//         // rewrite: (path) => path.replace(/^\/api/, ''),
-//       },
-//     },
-//   },
-//   plugins: [react()]
-
-// })
