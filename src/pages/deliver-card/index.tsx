@@ -1,12 +1,64 @@
+import cardService from '@/adapters/card';
 import Button from '@/components/Button';
 import InputErrorWrapper from '@/components/hocs/InputErrorWrapper';
 import Icon from '@/lib/icon';
+import { searchCardApiInterface } from '@/types/api.types';
+import { zodResolver } from '@hookform/resolvers/zod';
 import { cn } from '@nextui-org/react';
-import React from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useQuery } from '@tanstack/react-query';
+import React, { useEffect, useState } from 'react';
+import { useForm } from 'react-hook-form';
+import { useNavigate, useSearchParams } from 'react-router-dom';
+import { z } from 'zod';
+
+const deliverCardFormSchema = z.object({
+  surname: z.string(),
+  other_name: z.string(),
+  email_address: z.string().email(),
+  house_number: z.string(),
+  street_name: z.string(),
+  city: z.string(),
+  state: z.string(),
+});
 
 const DeliverCard = () => {
   const navigate = useNavigate();
+  const [searchValue, setSearchValue] = useState(``);
+  const [searchParams] = useSearchParams();
+
+  const { data, error, isLoading } = useQuery<any, any, searchCardApiInterface>({
+    queryKey: ['search-card', searchValue],
+    queryFn: () =>
+      cardService.searchCard({
+        id: searchValue,
+      }),
+    enabled: searchValue.length > 0,
+  });
+
+  const {
+    register,
+    watch,
+    reset,
+    trigger,
+    setValue,
+    formState: { errors },
+  } = useForm<z.infer<typeof deliverCardFormSchema>>({
+    resolver: zodResolver(deliverCardFormSchema),
+  });
+
+  useEffect(() => {
+    const search = searchParams.get('search');
+    if (search?.length) {
+      setSearchValue(search);
+    }
+  }, [searchParams]);
+
+  useEffect(() => {
+    reset({
+      surname: data?.last_name,
+      other_name: data?.first_name,
+    });
+  }, [data]);
 
   return (
     <div className='container pt-[2.94rem] md:pt-[1.56rem] w-full max-w-[69.375rem] px-container-base'>
@@ -41,20 +93,37 @@ const DeliverCard = () => {
             </p>
           </div>
           <div className='flex flex-col gap-[2rem]'>
-            <InputErrorWrapper>
+            <InputErrorWrapper error={errors?.surname?.message}>
               <div className='flex flex-col gap-2'>
                 <label className='text-black-4/90 dark:text-green-3 font-poppins font-[500] tracking-[-0.02rem]'>
-                  Full name
+                  Surname
                 </label>
-                <input className='form-input border-blue-1 focus:ring-0 focus-visible:border-blue-1 f rounded-[4px] bg-transparent' />
+                <input
+                  {...register('surname')}
+                  className='form-input border-blue-1 focus:ring-0 focus-visible:border-blue-1 f rounded-[4px] bg-transparent'
+                />
               </div>
             </InputErrorWrapper>
-            <InputErrorWrapper>
+            <InputErrorWrapper error={errors?.other_name?.message}>
+              <div className='flex flex-col gap-2'>
+                <label className='text-black-4/90 dark:text-green-3 font-poppins font-[500] tracking-[-0.02rem]'>
+                  Other name
+                </label>
+                <input
+                  {...register('other_name')}
+                  className='form-input border-blue-1 focus:ring-0 focus-visible:border-blue-1 f rounded-[4px] bg-transparent'
+                />
+              </div>
+            </InputErrorWrapper>
+            <InputErrorWrapper error={errors?.email_address?.message}>
               <div className='flex flex-col gap-2'>
                 <label className='text-black-4/90 dark:text-green-3 font-poppins font-[500] tracking-[-0.02rem]'>
                   Email Address
                 </label>
-                <input className='form-input border-blue-1 focus:ring-0 focus-visible:border-blue-1 f rounded-[4px] bg-transparent' />
+                <input
+                  {...register('email_address')}
+                  className='form-input border-blue-1 focus:ring-0 focus-visible:border-blue-1 f rounded-[4px] bg-transparent'
+                />
               </div>
             </InputErrorWrapper>
             <div className='flex flex-col gap-[1.5rem]'>
@@ -62,36 +131,48 @@ const DeliverCard = () => {
                 Delivery Address
               </label>
               <div className='grid grid-cols-1 md:grid-cols-2 gap-x-[1.88rem] gap-y-[1.75rem]'>
-                <InputErrorWrapper>
+                <InputErrorWrapper error={errors?.house_number?.message}>
                   <div className='flex flex-col gap-2'>
                     <label className='text-black-4/90 dark:text-green-3 font-poppins font-[500] tracking-[-0.02rem]'>
                       House Number
                     </label>
-                    <input className='form-input border-blue-1 focus:ring-0 focus-visible:border-blue-1 f rounded-[4px] bg-transparent' />
+                    <input
+                      {...register('house_number')}
+                      className='form-input border-blue-1 focus:ring-0 focus-visible:border-blue-1 f rounded-[4px] bg-transparent'
+                    />
                   </div>
                 </InputErrorWrapper>
-                <InputErrorWrapper>
+                <InputErrorWrapper error={errors?.street_name?.message}>
                   <div className='flex flex-col gap-2'>
                     <label className='text-black-4/90 dark:text-green-3 font-poppins font-[500] tracking-[-0.02rem]'>
                       Street Name
                     </label>
-                    <input className='form-input border-blue-1 focus:ring-0 focus-visible:border-blue-1 f rounded-[4px] bg-transparent' />
+                    <input
+                      {...register('street_name')}
+                      className='form-input border-blue-1 focus:ring-0 focus-visible:border-blue-1 f rounded-[4px] bg-transparent'
+                    />
                   </div>
                 </InputErrorWrapper>
-                <InputErrorWrapper>
+                <InputErrorWrapper error={errors?.city?.message}>
                   <div className='flex flex-col gap-2'>
                     <label className='text-black-4/90 dark:text-green-3 font-poppins font-[500] tracking-[-0.02rem]'>
                       City
                     </label>
-                    <input className='form-input border-blue-1 focus:ring-0 focus-visible:border-blue-1 f rounded-[4px] bg-transparent' />
+                    <input
+                      {...register('city')}
+                      className='form-input border-blue-1 focus:ring-0 focus-visible:border-blue-1 f rounded-[4px] bg-transparent'
+                    />
                   </div>
                 </InputErrorWrapper>
-                <InputErrorWrapper>
+                <InputErrorWrapper error={errors?.state?.message}>
                   <div className='flex flex-col gap-2'>
                     <label className='text-black-4/90 dark:text-green-3 font-poppins font-[500] tracking-[-0.02rem]'>
                       State
                     </label>
-                    <input className='form-input border-blue-1 focus:ring-0 focus-visible:border-blue-1 f rounded-[4px] bg-transparent' />
+                    <input
+                      {...register('state')}
+                      className='form-input border-blue-1 focus:ring-0 focus-visible:border-blue-1 f rounded-[4px] bg-transparent'
+                    />
                   </div>
                 </InputErrorWrapper>
                 <div

@@ -1,4 +1,4 @@
-interface searchCardApiInterface {
+export interface searchCardApiInterface {
   lasrra_id: string;
   first_name: string;
   last_name: string;
@@ -11,4 +11,21 @@ interface searchCardApiInterface {
   requires_validation: boolean;
   requires_recapture: boolean;
   has_data_errors: boolean;
+}
+
+export interface lgaApiInterface {
+  name: string;
+  created_at: string;
+  updated_at: string | null;
+  id: number;
+  code: string;
+}
+
+export interface collectionCenterInterface {
+  id: number;
+  code: string;
+  local_govt_code: string;
+  updated_at: any;
+  name: string;
+  created_at: string;
 }

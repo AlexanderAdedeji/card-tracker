@@ -2,12 +2,13 @@ import cardService from '@/adapters/card';
 import Button from '@/components/Button';
 import SearchInput from '@/components/general/SearchInput';
 import Icon from '@/lib/icon';
-import { routeTypeEnums } from '@/routes/routes.types';
+import { ROUTES, routeTypeEnums } from '@/routes/routes.types';
 import { cn } from '@nextui-org/react';
 import { useQuery } from '@tanstack/react-query';
 import { useEffect, useState } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import ReactLoading from 'react-loading';
+import { searchCardApiInterface } from '@/types/api.types';
 
 const CardQuery = () => {
   const [searchValue, setSearchValue] = useState(``);
@@ -106,7 +107,7 @@ const CardQuery = () => {
                 )}
               >
                 <p className='text-[0.75rem] md:text-[1rem]'>Requires Validation</p>
-                <p className='text-[0.75rem] md:text-[1rem] text-red-600 font-bold'>
+                <p className='text-[0.75rem] md:text-[0.85rem] text-red-600 dark:text-red-400 font-bold'>
                   {' '}
                   Your registration requires Validation
                 </p>
@@ -137,13 +138,15 @@ const CardQuery = () => {
             variant={'default'}
             themed={'theme1'}
             className='text-[0.875rem] md:text-[1rem]'
-            disabled={true}
+            // disabled={true}
+            onClick={() => navigate(`/${ROUTES['card-relocation']}?search=${searchValue}`)}
           />
           <Button
             label='Deliver card'
             variant={'naked'}
             className='text-[0.875rem] md:text-[1rem]'
-            disabled={true}
+            // disabled={true}
+            onClick={() => navigate(`/${ROUTES['card-delivery']}?search=${searchValue}`)}
           />
         </div>
       </div>

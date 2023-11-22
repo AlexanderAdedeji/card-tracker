@@ -14,4 +14,6 @@ export const routeTypeEnums = z.enum([
   'card-delivery',
 ]);
 
+export const ROUTES = routeTypeEnums.Enum;
+
 export type routeTypes = z.infer<typeof routeTypeEnums>;

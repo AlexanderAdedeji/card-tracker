@@ -30,16 +30,19 @@ interface IButton
   extends React.ButtonHTMLAttributes<HTMLButtonElement>,
     VariantProps<typeof buttonVariants> {
   label: string;
+  loader?: JSX.Element;
+  isLoading?: boolean;
 }
 
 const Button = forwardRef<HTMLButtonElement, IButton>(
-  ({ label, className, variant, size, themed, ...props }, ref) => {
+  ({ label, className, variant, size, themed, loader, isLoading, ...props }, ref) => {
     return (
       <button
         className={cn(buttonVariants({ variant, size, themed, className }))}
         ref={ref}
         {...props}
       >
+        {isLoading ? loader : <></>}
         {label}
       </button>
     );
