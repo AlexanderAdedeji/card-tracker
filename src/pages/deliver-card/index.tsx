@@ -217,7 +217,7 @@ const DeliverCard = () => {
           </p>
           <h4 className='mb-4  text-black-4/80 dark:text-green-18/80 font-[500]'>TO:</h4>
           <p className='max-w-[17rem] text-blue-3 mb-4'>
-            5a, Dr Ladi Alakija, Lekki Phase One, Lagos, Nigeria
+            {watch('house_number')}, {watch('street_name')}, {watch('city')}, {watch('state')}
           </p>
           <div className='flex justify-end'>
             <span className=' text-black-4/80 dark:text-green-18/80 font-[500]'>₦200</span>
