@@ -1,9 +1,8 @@
 import cardService from '@/adapters/card';
 import Button from '@/components/Button';
-import SearchInput from '@/components/general/SearchInput';
 import Icon from '@/lib/icon';
-import { ROUTES, routeTypeEnums } from '@/routes/routes.types';
-import { Input, cn } from '@nextui-org/react';
+import { ROUTES } from '@/routes/routes.types';
+import { cn } from '@nextui-org/react';
 import { useMutation, useQuery } from '@tanstack/react-query';
 import { useEffect, useState } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
