@@ -29,3 +29,10 @@ export interface collectionCenterInterface {
   name: string;
   created_at: string;
 }
+
+export interface getMaskedContactDetailsInterface {
+  code: string;
+  email: string;
+  message: string;
+  phoneNumber: string;
+}

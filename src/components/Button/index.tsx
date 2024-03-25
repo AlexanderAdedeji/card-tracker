@@ -1,6 +1,6 @@
 import React, { HTMLAttributes, forwardRef } from 'react';
 import { cva, type VariantProps } from 'class-variance-authority';
-import { cn } from '@nextui-org/react';
+import { Spinner, cn } from '@nextui-org/react';
 
 const buttonVariants = cva('rounded-[1.25rem] px-[2rem] font-domine ', {
   variants: {
@@ -38,11 +38,14 @@ const Button = forwardRef<HTMLButtonElement, IButton>(
   ({ label, className, variant, size, themed, loader, isLoading, ...props }, ref) => {
     return (
       <button
-        className={cn(buttonVariants({ variant, size, themed, className }))}
+        className={cn(
+          'flex items-center gap-2',
+          buttonVariants({ variant, size, themed, className }),
+        )}
         ref={ref}
         {...props}
       >
-        {isLoading ? loader : <></>}
+        {isLoading ? loader ?? <Spinner color='white' size='sm' /> : <></>}
         {label}
       </button>
     );

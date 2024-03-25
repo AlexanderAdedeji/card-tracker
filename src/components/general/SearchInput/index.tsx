@@ -26,12 +26,12 @@ const SearchInput = forwardRef<HTMLInputElement, ISearchInput>(
           <input
             ref={ref}
             placeholder='Search'
-            className='flex-grow bg-transparent border-none ring-0 outline-none placeholder:text-[14px] placeholder:font-domine text-black-3 '
+            className='flex-grow bg-transparent border-none ring-0 outline-none placeholder:text-[14px] placeholder:font-domine text-black-3 max-w-max'
             {...props}
           />
           <button
             onClick={() => onButtonClick()}
-            className='h-full relative px-[3rem] bg-btnGreenDeep dark:bg-btnGreen text-green-6 dark:text-black-1 hover:opacity-90 transition-opacity ease-in-out duration-300'
+            className='h-full relative text-[0.75rem] md:text-[1rem] px-[.5rem] md:px-[3rem] bg-btnGreenDeep dark:bg-btnGreen text-green-6 dark:text-black-1 hover:opacity-90 transition-opacity ease-in-out duration-300'
           >
             {buttonLabel}
           </button>

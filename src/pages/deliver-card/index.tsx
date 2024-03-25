@@ -6,7 +6,7 @@ import { searchCardApiInterface } from '@/types/api.types';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { cn } from '@nextui-org/react';
 import { useQuery } from '@tanstack/react-query';
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 import { z } from 'zod';
