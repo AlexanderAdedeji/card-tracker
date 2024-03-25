@@ -138,14 +138,14 @@ const CardQuery = () => {
             variant={'default'}
             themed={'theme1'}
             className='text-[0.875rem] md:text-[1rem]'
-            // disabled={data?.collection_center === 'N/A' || data?.local_government === 'N/A'}
+            disabled={data?.collection_center === 'N/A' || data?.local_government === 'N/A'}
             onClick={() => navigate(`/${ROUTES['card-relocation']}?search=${searchValue}`)}
           />
           <Button
             label='Deliver card'
             variant={'naked'}
             className='text-[0.875rem] md:text-[1rem]'
-            // disabled={data?.collection_center === 'N/A' || data?.local_government === 'N/A'}
+            disabled={data?.collection_center === 'N/A' || data?.local_government === 'N/A'}
             onClick={() => navigate(`/${ROUTES['card-delivery']}?search=${searchValue}`)}
           />
         </div>
